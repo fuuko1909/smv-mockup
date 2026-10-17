@@ -2,27 +2,30 @@
 
 // Bo mau chon qua ?mau=<ma>. Moi primary deu dat tuong phan >= 4.5:1 voi chu trang (WCAG AA)
 const BO_MAU = {
-  do:      { ten: "Đỏ SMV (chỉnh đạt AA)",          p: "#D32F2F", dark: "#B71C1C", soft: "#FDECEC", wash: "#F7F7F8" },
-  teal:    { ten: "Transformative Teal (WGSN 2026)", p: "#0E6F73", dark: "#0A5558", soft: "#E2F1F0", wash: "#F3F7F6" },
-  cloud:   { ten: "Cloud Dancer (Pantone 2026)",     p: "#1F2230", dark: "#000000", soft: "#E9E6DF", wash: "#F0EEE9" },
-  fuchsia: { ten: "Electric Fuchsia / Magenta in",   p: "#C2185B", dark: "#9C1248", soft: "#FCE7F0", wash: "#FAF6F8" },
-  blue:    { ten: "Blue Aura — xanh tin cậy",        p: "#2F56D9", dark: "#2343B0", soft: "#E8EEFD", wash: "#F5F7FC" },
-  dat:     { ten: "Đất nung (Mocha / Amber Haze)",   p: "#A44A2A", dark: "#85391F", soft: "#F7EAE3", wash: "#FAF6F2" },
+  do:      { ten: "Đỏ SMV (chỉnh đạt AA)",          p: "#D32F2F", dark: "#B71C1C", soft: "#FDECEC", wash: "#FBFBFC" },
+  teal:    { ten: "Transformative Teal (WGSN 2026)", p: "#0E6F73", dark: "#0A5558", soft: "#E2F1F0", wash: "#F6FAF9" },
+  cloud:   { ten: "Cloud Dancer (Pantone 2026)",     p: "#1F2230", dark: "#000000", soft: "#EFECE6", wash: "#F8F6F2" },
+  fuchsia: { ten: "Electric Fuchsia / Magenta in",   p: "#C2185B", dark: "#9C1248", soft: "#FCE7F0", wash: "#FCF8FA" },
+  blue:    { ten: "Blue Aura — xanh tin cậy",        p: "#2F56D9", dark: "#2343B0", soft: "#E8EEFD", wash: "#F8FAFE" },
+  dat:     { ten: "Đất nung (Mocha / Amber Haze)",   p: "#A44A2A", dark: "#85391F", soft: "#F7EAE3", wash: "#FCF9F6" },
 };
 const MA_MAU = new URLSearchParams(location.search).get("mau") in BO_MAU ? new URLSearchParams(location.search).get("mau") : "do";
 {
   const m = BO_MAU[MA_MAU], r = document.documentElement.style;
   r.setProperty("--p", m.p); r.setProperty("--p-dark", m.dark); r.setProperty("--p-soft", m.soft); r.setProperty("--wash", m.wash);
+  const tron = (a, b, t) => "#" + [1, 3, 5].map((i) => Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t) + parseInt(b.slice(i, i + 2), 16) * t).toString(16).padStart(2, "0")).join("");
+  r.setProperty("--p-tint", tron(m.soft, "#ffffff", 0.55));
 }
 
 tailwind.config = {
   theme: {
     container: { center: true, padding: { DEFAULT: "1rem", lg: "2rem" }, screens: { "2xl": "1320px" } },
     extend: {
+      boxShadow: { nhe: "0 1px 2px rgba(16,24,40,.04), 0 12px 32px -16px rgba(16,24,40,.14)" },
       fontFamily: { sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"] },
       colors: {
         primary: { DEFAULT: "var(--p)", soft: "var(--p-soft)", dark: "var(--p-dark)" },
-        ink: "#1F2230", muted: "#5F6475", line: "#E6E7EB", wash: "var(--wash)",
+        ink: "#1F2230", muted: "#6B7183", line: "#EEF0F3", tint: "var(--p-tint)", wash: "var(--wash)",
       },
       fontSize: {
         caption: ["12px", { lineHeight: "16px", fontWeight: "500" }],
@@ -71,17 +74,17 @@ const DANH_MUC = [
 
 function veHeader() {
   return `
-  <div class="hidden lg:block bg-ink text-white/85 text-caption">
+  <div class="hidden lg:block bg-tint text-muted text-caption">
     <div class="container flex h-8 items-center justify-between">
       <span>Miễn phí thiết kế · In nhanh 2 giờ nội thành Hà Nội · Giao toàn quốc</span>
-      <span class="flex gap-5"><span>cskh@insacmauviet.vn</span><span class="font-semibold text-white">Hotline 1900 6363</span><span>Chat Zalo</span></span>
+      <span class="flex gap-5"><span>cskh@insacmauviet.vn</span><span class="font-semibold text-ink">Hotline 1900 6363</span><span>Chat Zalo</span></span>
     </div>
   </div>
-  <header class="sticky top-0 z-40 bg-white border-b border-line">
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-line">
     <div class="container flex h-14 lg:h-16 items-center gap-4 lg:gap-8">
       <button class="lg:hidden -ml-1 p-2">${icon("menu", "w-6 h-6")}</button>
       <a href="home.html"><img src="img/logo.svg" alt="SMV" class="h-7 lg:h-9"></a>
-      <div class="hidden lg:flex flex-1 items-center h-11 rounded-lg border border-line bg-wash px-4 text-muted text-sm">
+      <div class="hidden lg:flex flex-1 items-center h-11 rounded-full border border-line bg-white px-5 text-muted text-sm">
         <span class="flex-1">Tìm danh thiếp, tem nhãn, thiệp cưới…</span>${icon("search")}
       </div>
       <div class="ml-auto lg:ml-0 flex items-center gap-1 lg:gap-2 text-ink">
@@ -105,7 +108,7 @@ function veHeader() {
 function veFooter() {
   const cot = (tieuDe, ds) => `<div><h4 class="text-title text-ink mb-3">${tieuDe}</h4><ul class="space-y-2 text-sm text-muted">${ds.map((x) => `<li>${x}</li>`).join("")}</ul></div>`;
   return `
-  <footer class="mt-16 lg:mt-24 border-t border-line bg-wash">
+  <footer class="mt-16 lg:mt-28 border-t border-line bg-white">
     <div class="container py-12 grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
       <div>
         <img src="img/logo.svg" class="h-9 mb-4" alt="SMV">
@@ -118,7 +121,7 @@ function veFooter() {
     </div>
     <div class="border-t border-line"><div class="container py-4 text-caption text-muted">© 2026 Sắc Màu Việt</div></div>
   </footer>
-  <nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-5 h-16 bg-white border-t border-line text-[12px] font-medium text-muted">
+  <nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-5 h-16 bg-white/90 backdrop-blur-md border-t border-line text-[12px] font-medium text-muted">
     <a class="flex flex-col items-center justify-center gap-1 text-primary">${icon("home")}Trang chủ</a>
     <a class="flex flex-col items-center justify-center gap-1">${icon("grid")}Sản phẩm</a>
     <a class="flex flex-col items-center justify-center gap-1">${icon("pen")}Tự thiết kế</a>

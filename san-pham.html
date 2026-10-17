@@ -20,7 +20,7 @@
   <div class="grid lg:grid-cols-[1.15fr_1fr] gap-6 lg:gap-12">
     <!-- ANH: 1 anh lon + thumbnail mat truoc/sau -->
     <div class="lg:sticky lg:top-32 self-start">
-      <div class="aspect-[4/3] rounded-2xl bg-wash grid place-items-center overflow-hidden">
+      <div class="aspect-[4/3] rounded-3xl bg-gradient-to-b from-tint to-wash grid place-items-center overflow-hidden ring-1 ring-line">
         <img src="img/sp-thiep-cuoi-1.webp" class="w-full h-full object-contain p-4 lg:p-8" alt="">
       </div>
       <div class="mt-3 flex gap-3">
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="mt-6 rounded-xl bg-wash p-4 lg:p-5 flex items-end justify-between gap-4">
+      <div class="mt-6 rounded-2xl bg-tint p-4 lg:p-5 flex items-end justify-between gap-4">
         <div>
           <p class="text-sm text-muted">Tạm tính 200 thiệp</p>
           <p class="text-[28px] leading-9 font-bold text-primary">1.200.000đ</p>
@@ -88,7 +88,7 @@
         <p>Đoạn văn mô tả để <b class="text-ink">16px / 24px</b>, độ rộng tối đa ~70 ký tự mỗi dòng để dễ đọc.</p>
       </div>
     </div>
-    <div class="rounded-2xl border border-line">
+    <div class="rounded-2xl bg-white shadow-nhe">
       <h3 class="px-5 pt-5 text-title">Thông số</h3>
       <dl class="mt-3 divide-y divide-line text-sm">
         <div class="flex justify-between px-5 py-3"><dt class="text-muted">Kích thước</dt><dd>12×18 cm / 13×18 cm</dd></div>
@@ -107,7 +107,7 @@
 </main>
 
 <!-- CTA dinh day tren mobile (nam tren thanh dieu huong duoi) -->
-<div class="lg:hidden fixed inset-x-0 bottom-16 z-30 bg-white border-t border-line px-4 py-3 flex items-center gap-3">
+<div class="lg:hidden fixed inset-x-0 bottom-16 z-30 bg-white/90 backdrop-blur-md border-t border-line px-4 py-3 flex items-center gap-3">
   <div class="shrink-0"><p class="text-caption text-muted">200 thiệp</p><p class="text-title text-primary font-bold">1.200.000đ</p></div>
   <a class="flex-1 inline-flex justify-center items-center h-12 rounded-lg bg-primary text-white font-semibold">Tuỳ chỉnh mẫu này</a>
 </div>
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("bac-gia").innerHTML = [["100", "7.000đ"], ["200", "6.000đ"], ["500", "5.200đ"], ["1000", "4.500đ"]].map(([sl, g], i) =>
     `<button class="rounded-lg border py-2.5 ${i === 1 ? "border-primary bg-primary-soft" : "border-line"}"><p class="text-base font-semibold">${sl}</p><p class="text-caption ${i === 1 ? "text-primary" : "text-muted"}">${g}/cái</p></button>`).join("");
   document.getElementById("lien-quan").innerHTML = [["Thiệp mời sinh nhật", "dm-thiep-moi", "5.000đ"], ["Danh thiếp giấy mỹ thuật", "dm-danh-thiep", "150.000đ"], ["Tem nhãn decal", "dm-sticker", "350đ"], ["Photobook cưới", "dm-photobook", "350.000đ"]].map(([t, a, g]) => `
-    <a class="group"><div class="aspect-[4/3] rounded-xl bg-wash overflow-hidden"><img src="img/${a}.webp" class="w-full h-full object-cover group-hover:scale-105 transition"></div>
+    <a class="group"><div class="aspect-[4/3] rounded-2xl bg-wash overflow-hidden shadow-nhe"><img src="img/${a}.webp" class="w-full h-full object-cover group-hover:scale-105 transition"></div>
     <h3 class="mt-3 text-[15px] lg:text-base font-semibold group-hover:text-primary">${t}</h3><p class="mt-1"><span class="text-sm text-muted">Từ</span> <span class="text-title">${g}</span></p></a>`).join("");
   document.querySelectorAll("[data-sao]").forEach((e) => (e.innerHTML = icon("star", "w-4 h-4 fill-current").repeat(5)));
   document.querySelectorAll("[data-i]").forEach((e) => (e.innerHTML = icon(e.dataset.i, e.dataset.c || "w-6 h-6")));
