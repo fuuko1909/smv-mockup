@@ -5,11 +5,11 @@ const BIEN = ["liquid", "dem", "studio"].includes(new URLSearchParams(location.s
 
 const V = {
   liquid: {
-    toi: false, body: "bg-[#F8FCFB] text-ink", // nen nhat bot theo yeu cau user 2026-10-17
+    toi: false, body: "bg-[#FDFEFE] text-ink", // user chot muc B "gan trang" 2026-10-17
     the: "kinh rounded-[28px]", theNho: "kinh rounded-2xl", btn: "nut-sang rounded-full", btn2: "kinh rounded-full text-ink",
     chu: "text-ink", phu: "text-muted", anhNen: "bg-white/50", h: "font-semibold tracking-[-0.035em]",
     chip: "kinh rounded-full", chipOn: "nut-sang rounded-full", gradient: "chu-gradient",
-    blobs: [["#5CC8B2", .26, "-10%", "-10%", 640], ["#8FD3F4", .22, "55%", "5%", 560], ["#0E6F73", .07, "20%", "55%", 620], ["#C9F2E8", .45, "70%", "60%", 520]],
+    blobs: [["#5CC8B2", .06, "-10%", "-10%", 640], ["#8FD3F4", .05, "55%", "5%", 560], ["#0E6F73", .015, "20%", "55%", 620], ["#C9F2E8", .1, "70%", "60%", 520]],
   },
   dem: {
     toi: true, body: "bg-[#031417] text-white",
