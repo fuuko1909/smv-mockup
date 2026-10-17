@@ -9,7 +9,7 @@ const BO_MAU = {
   blue:    { ten: "Blue Aura — xanh tin cậy",        p: "#2F56D9", dark: "#2343B0", soft: "#E8EEFD", wash: "#F8FAFE" },
   dat:     { ten: "Đất nung (Mocha / Amber Haze)",   p: "#A44A2A", dark: "#85391F", soft: "#F7EAE3", wash: "#FCF9F6" },
 };
-const MA_MAU = new URLSearchParams(location.search).get("mau") in BO_MAU ? new URLSearchParams(location.search).get("mau") : "do";
+const MA_MAU = new URLSearchParams(location.search).get("mau") in BO_MAU ? new URLSearchParams(location.search).get("mau") : "teal"; // da chot Teal 2026-10-17
 {
   const m = BO_MAU[MA_MAU], r = document.documentElement.style;
   r.setProperty("--p", m.p); r.setProperty("--p-dark", m.dark); r.setProperty("--p-soft", m.soft); r.setProperty("--wash", m.wash);

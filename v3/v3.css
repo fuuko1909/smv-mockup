@@ -1,0 +1,48 @@
+/* Hieu ung kinh (liquid glass) + nen cuc quang cho mockup v3 — mau Transformative Teal */
+
+/* Kinh sang: nen trong + vien sang + vet sang mep tren (specular) de doc ra la kinh, khong phai lop mau */
+.kinh {
+  background: linear-gradient(135deg, rgba(255,255,255,.62), rgba(255,255,255,.32));
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  backdrop-filter: blur(22px) saturate(170%);
+  border: 1px solid rgba(255,255,255,.7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(255,255,255,.25), 0 18px 50px -20px rgba(8,59,61,.35);
+}
+.kinh-dac { background: rgba(255,255,255,.82); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 18px 50px -24px rgba(8,59,61,.3); }
+
+/* Kinh toi: dung cho Aurora Night */
+.kinh-toi {
+  background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 24px 60px -24px rgba(0,0,0,.6);
+}
+.vien-sang { position: relative; }
+.vien-sang::before { /* vien gradient phat sang */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(92,200,178,.9), rgba(255,255,255,.05) 40%, rgba(25,167,160,.7));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+
+/* Nut chinh co anh sang */
+.nut-sang { background: linear-gradient(180deg, #14898A, #0E6F73); box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 28px -10px rgba(14,111,115,.75); color: #fff; }
+.nut-mint { background: linear-gradient(180deg, #7BE0CB, #2FB5A6); box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 0 32px -6px rgba(92,200,178,.7); color: #04161A; }
+.chu-gradient { background: linear-gradient(90deg, #0E6F73, #1FA79D 45%, #5CC8B2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chu-gradient-toi { background: linear-gradient(90deg, #7BE0CB, #B8F3E6 50%, #6CC7F0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Nen cuc quang: cac khoi mau mo troi cham */
+.cuc-quang { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+.cuc-quang i { position: absolute; border-radius: 50%; filter: blur(90px); animation: troi 22s ease-in-out infinite alternate; }
+@keyframes troi { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(60px,-40px) scale(1.15); } }
+
+/* Chay chu ngang (marquee) */
+.chay { display: flex; width: max-content; animation: chay 40s linear infinite; }
+@keyframes chay { to { transform: translateX(-50%); } }
+.mo-mep { -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+
+.noi { animation: noi 6s ease-in-out infinite; }
+@keyframes noi { 50% { transform: translateY(-10px); } }
+
+@media (prefers-reduced-motion: reduce) { .cuc-quang i, .chay, .noi { animation: none; } }
