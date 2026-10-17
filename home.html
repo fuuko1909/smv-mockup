@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup trang chủ — Sắc Màu Việt</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/chung.js"></script>
+<style>.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}</style>
+</head>
+<body class="font-sans text-ink bg-white text-[15px] leading-[22px] lg:text-base pb-16 lg:pb-0">
+<div id="header"></div>
+
+<main>
+  <!-- HERO: chu tren nen sang (tach khoi anh) thay cho khung xam mo de len anh -->
+  <section class="bg-wash">
+    <div class="container grid lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-12 items-center py-6 lg:py-14">
+      <div class="order-2 lg:order-1">
+        <p class="text-caption uppercase tracking-wider text-primary">Thiết kế & đặt in online</p>
+        <h1 class="mt-3 text-display-m lg:text-display text-ink">Thiết kế đẹp, in nhanh,<br class="hidden lg:block"> giao tận nơi</h1>
+        <p class="mt-4 text-base lg:text-title lg:font-normal text-muted max-w-lg">Chọn mẫu có sẵn hoặc tự thiết kế trên trình chỉnh sửa trực tuyến. Đặt in và nhận hàng trong 2 giờ nội thành Hà Nội.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a class="inline-flex justify-center items-center h-12 px-6 rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark">Xem mẫu thiết kế</a>
+          <a class="inline-flex justify-center items-center gap-2 h-12 px-6 rounded-lg border border-ink/15 bg-white font-semibold">Tải file lên & đặt in</a>
+        </div>
+        <dl class="mt-8 grid grid-cols-3 gap-4 max-w-md">
+          <div><dt class="text-h3 lg:text-[28px] lg:leading-9 font-bold">25+</dt><dd class="text-sm text-muted">mẫu thiết kế</dd></div>
+          <div><dt class="text-h3 lg:text-[28px] lg:leading-9 font-bold">34</dt><dd class="text-sm text-muted">tỉnh thành giao hàng</dd></div>
+          <div><dt class="text-h3 lg:text-[28px] lg:leading-9 font-bold">2 giờ</dt><dd class="text-sm text-muted">in & giao nhanh</dd></div>
+        </dl>
+      </div>
+      <img src="img/cms-5105289b.webp" alt="" class="order-1 lg:order-2 w-full aspect-[4/3] object-cover rounded-2xl">
+    </div>
+  </section>
+
+  <!-- CAM KET: dua len ngay duoi hero, chu 14-16px thay vi 10-12px -->
+  <section class="border-b border-line">
+    <div class="container grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 py-5 lg:py-6">
+      
+      <div class="flex gap-3"><span class="text-primary shrink-0" data-i="truck"></span><div><p class="text-sm lg:text-base font-semibold">Giao hàng toàn quốc</p><p class="text-sm text-muted hidden lg:block">Đóng gói cẩn thận, giao nhanh 63 tỉnh thành</p></div></div>
+      <div class="flex gap-3"><span class="text-primary shrink-0" data-i="shield"></span><div><p class="text-sm lg:text-base font-semibold">Thanh toán an toàn</p><p class="text-sm text-muted hidden lg:block">Chuyển khoản, ví điện tử, COD</p></div></div>
+      <div class="flex gap-3"><span class="text-primary shrink-0" data-i="pen"></span><div><p class="text-sm lg:text-base font-semibold">Miễn phí thiết kế</p><p class="text-sm text-muted hidden lg:block">Chỉnh sửa trực tuyến, xem trước khi in</p></div></div>
+      <div class="flex gap-3"><span class="text-primary shrink-0" data-i="check"></span><div><p class="text-sm lg:text-base font-semibold">Bảo hành in ấn</p><p class="text-sm text-muted hidden lg:block">Đổi miễn phí nếu lỗi từ xưởng</p></div></div>
+    </div>
+  </section>
+
+  <!-- DANH MUC: ten duoi anh, khong viet hoa, khong hien "0 mau"; mobile cuon ngang -->
+  <section class="container mt-10 lg:mt-16">
+    <div class="flex items-end justify-between gap-4">
+      <div><h2 class="text-h2-m lg:text-h2">Bạn muốn in gì?</h2><p class="mt-1 text-muted">12 nhóm sản phẩm in giấy, có mẫu sẵn để sửa.</p></div>
+      <a class="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-primary">Xem tất cả <span data-i="arrow" data-c="w-4 h-4"></span></a>
+    </div>
+    <div id="luoi-dm" class="mt-6 -mx-4 px-4 flex gap-3 overflow-x-auto no-scrollbar snap-x lg:mx-0 lg:px-0 lg:grid lg:grid-cols-6 lg:gap-5 lg:overflow-visible"></div>
+  </section>
+
+  <!-- SAN PHAM NOI BAT: the co gia "tu", don vi, thoi gian in -->
+  <section class="container mt-12 lg:mt-20">
+    <div class="flex items-end justify-between gap-4">
+      <div><h2 class="text-h2-m lg:text-h2">Mẫu được đặt nhiều</h2><p class="mt-1 text-muted">Sửa tên, ảnh, màu ngay trên web rồi đặt in.</p></div>
+      <a class="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-primary">Xem tất cả <span data-i="arrow" data-c="w-4 h-4"></span></a>
+    </div>
+    <div id="luoi-sp" class="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-6 lg:gap-x-6 lg:gap-y-10"></div>
+  </section>
+
+  <!-- 3 BUOC -->
+  <section class="mt-12 lg:mt-20 bg-wash">
+    <div class="container py-12 lg:py-16">
+      <h2 class="text-h2-m lg:text-h2 text-center">Đặt in trong 3 bước</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <div class="bg-white rounded-2xl overflow-hidden border border-line"><img src="img/cms-776eab8c.webp" class="aspect-[4/3] w-full object-cover"><div class="p-5"><p class="text-caption text-primary">BƯỚC 1</p><h3 class="mt-1 text-h3">Chọn mẫu</h3><p class="mt-2 text-muted">Mẫu chuẩn kích thước in theo từng sản phẩm, cập nhật mỗi tuần.</p></div></div>
+        <div class="bg-white rounded-2xl overflow-hidden border border-line"><img src="img/cms-3c6bb8c6.webp" class="aspect-[4/3] w-full object-cover"><div class="p-5"><p class="text-caption text-primary">BƯỚC 2</p><h3 class="mt-1 text-h3">Sửa trực tuyến</h3><p class="mt-2 text-muted">Đổi chữ, ảnh, màu ngay trên trình duyệt. Phông tiếng Việt đầy đủ.</p></div></div>
+        <div class="bg-white rounded-2xl overflow-hidden border border-line"><img src="img/cms-6dfb7532.webp" class="aspect-[4/3] w-full object-cover"><div class="p-5"><p class="text-caption text-primary">BƯỚC 3</p><h3 class="mt-1 text-h3">In & giao tận nơi</h3><p class="mt-2 text-muted">Báo giá theo số lượng, thanh toán online, theo dõi đơn từng bước.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KHUYEN MAI + DOANH NGHIEP: anh that, khong de khoi xam rong -->
+  <section class="container mt-12 lg:mt-20 grid lg:grid-cols-2 gap-4 lg:gap-6">
+    <div class="rounded-2xl bg-primary-soft p-6 lg:p-10 flex flex-col justify-center">
+      <p class="text-caption uppercase tracking-wider text-primary">Ưu đãi khách mới</p>
+      <p class="mt-2 text-[56px] leading-none font-bold text-primary">−20%</p>
+      <h3 class="mt-3 text-h3">Cho đơn in đầu tiên</h3>
+      <p class="mt-2 text-muted max-w-sm">Nhập mã <b class="text-ink">CHAOBAN</b> khi thanh toán. Áp dụng mọi sản phẩm.</p>
+      <a class="mt-5 self-start inline-flex items-center h-12 px-6 rounded-lg bg-primary text-white font-semibold">Nhận ưu đãi</a>
+    </div>
+    <div class="relative rounded-2xl overflow-hidden min-h-[280px]">
+      <img src="img/cms-e07c3603.webp" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+      <div class="relative h-full flex flex-col justify-end p-6 lg:p-10 text-white">
+        <p class="text-caption uppercase tracking-wider text-white/80">Giải pháp doanh nghiệp</p>
+        <h3 class="mt-2 text-h3 lg:text-[28px] lg:leading-9 font-bold">In ấn trọn gói cho thương hiệu</h3>
+        <p class="mt-2 text-white/85 max-w-md">Catalogue, profile, danh thiếp, tem nhãn — một đầu mối, xuất hoá đơn VAT.</p>
+        <a class="mt-5 self-start inline-flex items-center h-12 px-6 rounded-lg bg-white text-ink font-semibold">Nhận báo giá</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DANH GIA -->
+  <section class="container mt-12 lg:mt-20">
+    <h2 class="text-h2-m lg:text-h2">Khách hàng nói gì</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-4 lg:gap-6">
+      <figure class="rounded-2xl border border-line p-6"><div class="flex gap-0.5 text-amber-500" data-sao></div><blockquote class="mt-3">"Đặt card visit cho cả team, tự sửa tên trên web 5 phút, hôm sau có hàng. Quá tiện."</blockquote><figcaption class="mt-4 text-sm"><b>Nguyễn Minh Anh</b> <span class="text-muted">· Văn phòng luật</span></figcaption></figure>
+      <figure class="rounded-2xl border border-line p-6"><div class="flex gap-0.5 text-amber-500" data-sao></div><blockquote class="mt-3">"Kho nhãn vở đẹp, con tự chọn. Giá rõ ràng theo số lượng, giao hàng nhanh."</blockquote><figcaption class="mt-4 text-sm"><b>Trần Thu Hà</b> <span class="text-muted">· Phụ huynh</span></figcaption></figure>
+      <figure class="rounded-2xl border border-line p-6"><div class="flex gap-0.5 text-amber-500" data-sao></div><blockquote class="mt-3">"Card visit khai trương lên đúng màu thiết kế. Giao nhanh, đóng gói kỹ."</blockquote><figcaption class="mt-4 text-sm"><b>Lê Hoàng Nam</b> <span class="text-muted">· Chủ cửa hàng</span></figcaption></figure>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script>
+// Du lieu that lay tu API prod 2026-10-17 (gia/so mau danh muc la gia dinh cho mockup)
+const SP = [
+  ["Thiệp cưới — Mẫu số 1", "sp-thiep-cuoi-1", "7.000đ", "cái", "Thiệp mời", "Bán chạy"],
+  ["Bộ nhãn vở các môn học", "sp-bo-nhan-vo-cac-mon-hoc", "60.000đ", "bộ", "Nhãn vở", ""],
+  ["Nhãn vở Phi hành gia", "sp-nhan-vo-phi-hanh-gia", "700đ", "tem", "Nhãn vở", "Mới"],
+  ["Nhãn vở dễ thương mẫu 1", "sp-nhan-vo-de-thuong-mau-1", "700đ", "cái", "Nhãn vở", ""],
+  ["Nhãn vở Robot Optimus", "sp-nhan-vo-robot-optimus", "700đ", "cái", "Nhãn vở", ""],
+  ["Tem nhãn decal chống nước", "dm-sticker", "350đ", "tem", "Tem nhãn", ""],
+  ["Danh thiếp giấy mỹ thuật", "dm-danh-thiep", "150.000đ", "hộp", "Danh thiếp", "Bán chạy"],
+  ["Lịch để bàn 2027", "dm-lich-de-ban", "45.000đ", "cuốn", "Lịch", "Mới"],
+];
+document.addEventListener("DOMContentLoaded", () => {
+  const giaDm = { "Danh thiếp": "150.000đ/hộp", "Nhãn vở": "700đ/tem", "Thiệp mời": "7.000đ/cái", "Tem nhãn & sticker": "350đ/tem" };
+  document.getElementById("luoi-dm").innerHTML = DANH_MUC.map(([ten, anh]) => `
+    <a href="#" class="group snap-start shrink-0 w-[42%] sm:w-[30%] lg:w-auto">
+      <div class="aspect-square rounded-xl bg-wash overflow-hidden"><img src="img/${anh}.webp" alt="" class="w-full h-full object-cover group-hover:scale-105 transition"></div>
+      <p class="mt-2.5 text-base font-semibold leading-snug group-hover:text-primary">${ten}</p>
+      ${giaDm[ten] ? `<p class="text-sm text-muted">Từ ${giaDm[ten]}</p>` : ""}
+    </a>`).join("");
+  document.getElementById("luoi-sp").innerHTML = SP.map(([ten, anh, gia, dv, dm, nhan]) => `
+    <a href="san-pham.html" class="group">
+      <div class="relative aspect-[4/3] rounded-xl bg-wash overflow-hidden">
+        <img src="img/${anh}.webp" alt="" class="w-full h-full object-contain p-3 group-hover:scale-105 transition">
+        ${nhan ? `<span class="absolute top-2 left-2 rounded-md bg-white px-2 py-0.5 text-caption ${nhan === "Mới" ? "text-emerald-700" : "text-primary"}">${nhan}</span>` : ""}
+      </div>
+      <p class="mt-3 text-caption text-muted">${dm}</p>
+      <h3 class="mt-0.5 text-[15px] leading-[22px] lg:text-base font-semibold line-clamp-2 group-hover:text-primary">${ten}</h3>
+      <p class="mt-1"><span class="text-sm text-muted">Từ</span> <span class="text-title text-ink">${gia}</span><span class="text-sm text-muted">/${dv}</span></p>
+      <p class="mt-1 flex items-center gap-1 text-sm text-muted"><span data-i="clock" data-c="w-4 h-4"></span>In trong 3 ngày</p>
+    </a>`).join("");
+  document.querySelectorAll("[data-sao]").forEach((e) => (e.innerHTML = icon("star", "w-4 h-4 fill-current").repeat(5)));
+  document.querySelectorAll("[data-i]").forEach((e) => (e.innerHTML = icon(e.dataset.i, e.dataset.c || "w-6 h-6")));
+});
+</script>
+</body>
+</html>

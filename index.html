@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mockup giao diện mới — Sắc Màu Việt</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="assets/chung.js"></script>
+<style>
+  /* Khung xem desktop: render 1440px roi thu nho cho vua man hinh */
+  .khung-desktop{position:relative;width:100%;aspect-ratio:1440/900;overflow:hidden;border-radius:12px;border:1px solid #E6E7EB;background:#fff}
+  .khung-desktop iframe{position:absolute;top:0;left:0;width:1440px;height:900px;transform-origin:0 0}
+  .khung-mobile{width:390px;height:780px;border:10px solid #1F2230;border-radius:36px;overflow:hidden;background:#fff;flex-shrink:0}
+  .khung-mobile iframe{width:100%;height:100%}
+</style>
+</head>
+<body class="font-sans text-ink bg-wash">
+<header class="bg-white border-b border-line sticky top-0 z-50">
+  <div class="container flex h-14 items-center gap-6 text-sm font-medium">
+    <img src="img/logo.svg" class="h-7" alt="SMV"><span class="text-muted hidden sm:inline">Mockup giao diện mới · 17/10/2026</span>
+    <nav class="ml-auto flex gap-5"><a href="#so-sanh">So sánh</a><a href="#chu">Thang chữ</a><a href="#trang-chu">Trang chủ</a><a href="#san-pham">Sản phẩm</a></nav>
+  </div>
+</header>
+
+<main class="container py-10 space-y-16">
+  <section>
+    <h1 class="text-display-m lg:text-display">Mockup làm mới giao diện public</h1>
+    <p class="mt-3 text-title font-normal text-muted max-w-3xl">Dựa trên số đo thực tế web hiện tại và inchi.vn, penci.vn, Vistaprint, MOO. Ảnh và tên sản phẩm lấy từ prod; giá và số liệu trên mockup là minh hoạ.</p>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl p-5 border border-line"><p class="text-caption text-primary">FONT</p><p class="mt-1 text-title">1 họ Be Vietnam Pro</p><p class="text-sm text-muted mt-1">Bỏ Lora + Google Sans CDN</p></div>
+      <div class="bg-white rounded-xl p-5 border border-line"><p class="text-caption text-primary">PHÂN CẤP</p><p class="mt-1 text-title">h1 44 › h2 32 › h3 22</p><p class="text-sm text-muted mt-1">Hiện tại h2 52 to hơn h1 38</p></div>
+      <div class="bg-white rounded-xl p-5 border border-line"><p class="text-caption text-primary">CỠ CHỮ NỘI DUNG</p><p class="mt-1 text-title">14–16px</p><p class="text-sm text-muted mt-1">12px chỉ cho badge/pháp lý</p></div>
+      <div class="bg-white rounded-xl p-5 border border-line"><p class="text-caption text-primary">MOBILE</p><p class="mt-1 text-title">Nút ≥ 44px, cuộn ngang</p><p class="text-sm text-muted mt-1">Trang chủ ngắn lại ~40%</p></div>
+    </div>
+  </section>
+
+  <!-- SO SANH -->
+  <section id="so-sanh" class="scroll-mt-20">
+    <h2 class="text-h2-m lg:text-h2">Hiện tại vs đối thủ</h2>
+    <div class="mt-6 grid lg:grid-cols-2 gap-6">
+      <figure><img src="img/shot-smv-home-desktop.webp" class="rounded-xl border border-line"><figcaption class="mt-2 text-sm"><b>Sắc Màu Việt hiện tại</b> — chữ Lora trên khung xám mờ, ô danh mục "0 mẫu", ô Nhãn vở trắng ảnh (ảnh gốc 2,7MB)</figcaption></figure>
+      <figure><img src="img/shot-vista-home-desktop.webp" class="rounded-xl border border-line"><figcaption class="mt-2 text-sm"><b>Vistaprint</b> — heading đậm 48/700, đoạn văn 16/24, dòng danh mục ngay dưới search</figcaption></figure>
+      <figure><img src="img/shot-inchi-home-desktop.webp" class="rounded-xl border border-line"><figcaption class="mt-2 text-sm"><b>inchi.vn</b> — 1 font Rubik, topbar hotline/Zalo, menu ngang</figcaption></figure>
+      <figure><img src="img/shot-moo-bc-desktop.webp" class="rounded-xl border border-line"><figcaption class="mt-2 text-sm"><b>MOO</b> — nhiều khoảng trắng, thẻ 4/hàng có giá</figcaption></figure>
+    </div>
+    <div class="mt-6 overflow-x-auto bg-white rounded-xl border border-line">
+      <table class="w-full text-sm text-left">
+        <thead class="bg-wash text-muted"><tr><th class="p-3">Chỉ số</th><th class="p-3">SMV hiện tại</th><th class="p-3 text-primary">Mockup mới</th><th class="p-3">inchi</th><th class="p-3">penci</th><th class="p-3">Vistaprint</th><th class="p-3">MOO</th></tr></thead>
+        <tbody class="divide-y divide-line">
+          <tr><td class="p-3">Font</td><td class="p-3">Google Sans + Lora + Be Vietnam</td><td class="p-3 font-semibold">Be Vietnam Pro</td><td class="p-3">Rubik</td><td class="p-3">Google Sans</td><td class="p-3">Graphik</td><td class="p-3">Bryant + Avenir</td></tr>
+          <tr><td class="p-3">h1 / h2 / h3</td><td class="p-3 text-primary">38 / 52 / 34</td><td class="p-3 font-semibold">44 / 32 / 22</td><td class="p-3">— / 28 / 28</td><td class="p-3">32 / 22 / —</td><td class="p-3">48 / 36 / 16</td><td class="p-3">42 / 30 / 24</td></tr>
+          <tr><td class="p-3">Đoạn văn</td><td class="p-3 text-primary">14/20</td><td class="p-3 font-semibold">16/24 (mobile 15/22)</td><td class="p-3">14/21</td><td class="p-3">14</td><td class="p-3">16/24</td><td class="p-3">14–18</td></tr>
+          <tr><td class="p-3">Header desktop</td><td class="p-3">130px</td><td class="p-3 font-semibold">32 + 64 + 44 = 140 (topbar ẩn khi cuộn)</td><td class="p-3">178</td><td class="p-3">64</td><td class="p-3">261</td><td class="p-3">100–182</td></tr>
+          <tr><td class="p-3">Nút mobile</td><td class="p-3 text-primary">36px</td><td class="p-3 font-semibold">44–48px</td><td class="p-3">50</td><td class="p-3">40</td><td class="p-3">34</td><td class="p-3">40</td></tr>
+          <tr><td class="p-3">Khung nội dung</td><td class="p-3">1440</td><td class="p-3 font-semibold">1320</td><td class="p-3">1260</td><td class="p-3">1440</td><td class="p-3">~1350</td><td class="p-3">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- THANG CHU -->
+  <section id="chu" class="scroll-mt-20">
+    <h2 class="text-h2-m lg:text-h2">Thang chữ đề xuất — Be Vietnam Pro</h2>
+    <div class="mt-6 grid lg:grid-cols-[1.4fr_1fr] gap-6">
+      <div class="bg-white rounded-xl border border-line divide-y divide-line">
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">display 44/52 · 700<br>mobile 30/38</span><span class="text-display">Thiết kế đẹp, in nhanh</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">h2 32/40 · 700<br>mobile 24/32</span><span class="text-h2">Mẫu được đặt nhiều</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">h3 22/30 · 600<br>mobile 18/26</span><span class="text-h3">Sửa trực tuyến</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">title 18/26 · 600</span><span class="text-title">Thiệp cưới — Mẫu số 1 · 7.000đ</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">body 16/24 · 400<br>mobile 15/22</span><span class="text-base">Chọn mẫu có sẵn hoặc tự thiết kế trên trình chỉnh sửa trực tuyến, đặt in và giao hàng toàn quốc.</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">small 14/20 · 400–500</span><span class="text-sm">Menu, nút, thông tin phụ, nhãn form</span></div>
+        <div class="p-5 flex items-baseline gap-6"><span class="w-28 shrink-0 text-caption text-muted">caption 12/16 · 500</span><span class="text-caption">BADGE · PHÁP LÝ · © 2026</span></div>
+      </div>
+      <div class="bg-white rounded-xl border border-line p-6">
+        <p class="text-caption text-muted">TIÊU ĐỀ DÀI CÓ DẤU — SO SÁNH</p>
+        <p class="mt-4 text-caption text-primary">Hiện tại: Lora 500</p>
+        <p class="mt-1" style="font-family:Lora,serif;font-weight:500;font-size:34px;line-height:1.15">Mọi thứ bạn cần để thiết kế và in</p>
+        <p class="mt-6 text-caption text-emerald-700">Đề xuất: Be Vietnam Pro 700</p>
+        <p class="mt-1 text-h2">Mọi thứ bạn cần để thiết kế và in</p>
+        <p class="mt-6 text-sm text-muted">Màu: giữ đỏ thương hiệu <b class="text-primary">#E53935</b> cho CTA, chữ chính <b>#1F2230</b>, chữ phụ <b>#5F6475</b> (đạt WCAG AA trên nền trắng).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANG CHU -->
+  <section id="trang-chu" class="scroll-mt-20">
+    <div class="flex items-end justify-between gap-4"><h2 class="text-h2-m lg:text-h2">Trang chủ</h2><a href="home.html" target="_blank" class="text-sm font-semibold text-primary">Mở toàn trang ↗</a></div>
+    <div class="mt-6 flex flex-col xl:flex-row gap-6 items-start">
+      <div class="flex-1 w-full"><p class="mb-2 text-sm text-muted">Desktop 1440px (cuộn trong khung)</p><div class="khung-desktop"><iframe src="home.html" loading="lazy"></iframe></div></div>
+      <div><p class="mb-2 text-sm text-muted">Mobile 390px</p><div class="khung-mobile"><iframe src="home.html" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+
+  <!-- SAN PHAM -->
+  <section id="san-pham" class="scroll-mt-20">
+    <div class="flex items-end justify-between gap-4"><h2 class="text-h2-m lg:text-h2">Trang sản phẩm</h2><a href="san-pham.html" target="_blank" class="text-sm font-semibold text-primary">Mở toàn trang ↗</a></div>
+    <div class="mt-6 flex flex-col xl:flex-row gap-6 items-start">
+      <div class="flex-1 w-full"><p class="mb-2 text-sm text-muted">Desktop 1440px</p><div class="khung-desktop"><iframe src="san-pham.html" loading="lazy"></iframe></div></div>
+      <div><p class="mb-2 text-sm text-muted">Mobile 390px — CTA dính đáy</p><div class="khung-mobile"><iframe src="san-pham.html" loading="lazy"></iframe></div></div>
+    </div>
+  </section>
+</main>
+<script>
+  // Thu nho iframe 1440px theo be rong khung
+  const canKhung = () => document.querySelectorAll(".khung-desktop").forEach((k) => (k.querySelector("iframe").style.transform = `scale(${k.clientWidth / 1440})`));
+  addEventListener("resize", canKhung); addEventListener("load", canKhung); canKhung();
+</script>
+</body>
+</html>
