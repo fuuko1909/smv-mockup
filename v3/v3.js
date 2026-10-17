@@ -28,8 +28,11 @@ const V = {
   },
 }[BIEN];
 
+// ?nen=<he so> nhan do dam cac mang cuc quang (de user chon muc nhat); ?nenmau=<hex khong #> doi nen chinh
+const HE_SO_NEN = parseFloat(new URLSearchParams(location.search).get("nen")) || 1;
+const NEN_MAU = new URLSearchParams(location.search).get("nenmau");
 const nenCucQuang = () => V.blobs.length ? `<div class="cuc-quang" aria-hidden="true">${V.blobs.map(([c, o, x, y, s], i) =>
-  `<i style="background:${c};opacity:${o};left:${x};top:${y};width:${s}px;height:${s}px;animation-delay:-${i * 5}s"></i>`).join("")}</div>` : "";
+  `<i style="background:${c};opacity:${o * HE_SO_NEN};left:${x};top:${y};width:${s}px;height:${s}px;animation-delay:-${i * 5}s"></i>`).join("")}</div>` : "";
 
 // ---------- Thanh dieu huong ----------
 function thanhNoi() {
@@ -268,6 +271,7 @@ function chanTrang() {
 
 function veTrangChu() {
   document.body.className = `font-sans antialiased ${V.body}`;
+  if (NEN_MAU) document.body.style.background = "#" + NEN_MAU;
   const hero = { liquid: heroLiquid, dem: heroDem, studio: heroStudio }[BIEN]();
   document.body.innerHTML = nenCucQuang() + (BIEN === "studio" ? thanhStudio() : thanhNoi()) +
     `<main>${hero}${chayChu()}${danhMuc()}${sanPham3()}${baBuoc()}${dai()}${danhGia()}</main>` + chanTrang();
@@ -276,6 +280,7 @@ function veTrangChu() {
 // ---------- Trang san pham ----------
 function veTrangSanPham() {
   document.body.className = `font-sans antialiased ${V.body}`;
+  if (NEN_MAU) document.body.style.background = "#" + NEN_MAU;
   const chip = (ds) => ds.map((t, i) => `<button class="h-11 px-4 text-sm font-medium ${i === 0 ? V.chipOn : V.chip}">${t}</button>`).join("");
   const bac = [["100", "7.000đ"], ["200", "6.000đ"], ["500", "5.200đ"], ["1000", "4.500đ"]].map(([s, g], i) =>
     `<button class="py-2.5 text-center !rounded-2xl ${i === 1 ? V.chipOn : V.chip}"><p class="text-base font-semibold">${s}</p><p class="text-xs opacity-75">${g}/cái</p></button>`).join("");
