@@ -220,12 +220,32 @@ function baBuoc() {
     <div class="relative mt-8 grid md:grid-cols-3 gap-3 lg:gap-5">
       <div class="hidden md:block absolute top-[52px] left-[16%] right-[16%] border-t-2 border-dashed ${V.toi ? "border-white/20" : "border-primary/25"}"></div>
       ${ds.map(([t, m, i], k) => `<div class="relative p-6 lg:p-8 ${V.the}">
-        <div class="flex items-center gap-3"><span class="grid place-items-center w-14 h-14 rounded-2xl ${V.toi ? "nut-mint" : "nut-sang"}">${icon(i, "w-6 h-6")}</span><span class="text-5xl font-bold ${V.toi ? "text-white/10" : "text-primary/10"} ml-auto">0${k + 1}</span></div>
+        <div class="flex items-center gap-3"><span class="grid place-items-center w-14 h-14 rounded-2xl ${V.toi ? "nut-mint" : "bg-[#E6F5F2] text-primary ring-1 ring-[#CFEBE5]"}">${icon(i, "w-6 h-6")}</span><span class="text-5xl font-bold ${V.toi ? "text-white/10" : "text-primary/10"} ml-auto">0${k + 1}</span></div>
         <h3 class="mt-5 text-xl font-semibold">${t}</h3><p class="mt-2 ${V.phu}">${m}</p></div>`).join("")}
     </div></section>`;
 }
 
 function dai() {
+  if (V.toi) return daiToi();
+  // Ban sang: nen mint rat nhat -> trang, chu toi; teal chi o tieu de + nut (user muon xanh nhat hon)
+  return `<section class="container mt-16 lg:mt-28">
+    <div class="relative overflow-hidden rounded-[36px] p-7 sm:p-10 lg:p-16 ring-1 ring-[#DCEFEA] bg-gradient-to-br from-[#E9F7F4] via-[#F4FBF9] to-white">
+      <div class="absolute -right-24 -top-24 w-[420px] h-[420px] rounded-full bg-[#5CC8B2]/20 blur-[90px]"></div>
+      <div class="absolute -left-20 -bottom-28 w-[380px] h-[380px] rounded-full bg-[#8FD3F4]/15 blur-[90px]"></div>
+      <div class="relative grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
+        <div><p class="text-xs font-semibold uppercase tracking-[.2em] text-primary">Ưu đãi khách mới</p>
+          <h2 class="mt-3 text-[34px] leading-10 lg:text-[56px] lg:leading-[60px] font-semibold tracking-[-0.03em] text-ink">Giảm <span class="chu-gradient">20%</span> cho<br>đơn in đầu tiên</h2>
+          <p class="mt-4 text-muted max-w-md">Nhập email để nhận mã. Áp dụng mọi sản phẩm, không giới hạn số lượng.</p></div>
+        <div class="p-2 flex flex-col sm:flex-row gap-2 rounded-[22px] sm:rounded-full kinh-dac">
+          <input class="flex-1 min-w-0 h-12 px-4 bg-transparent outline-none placeholder:text-muted" placeholder="Email của bạn">
+          <a class="inline-flex justify-center items-center h-12 px-7 font-semibold nut-sang rounded-full">Nhận mã −20%</a>
+        </div>
+      </div>
+      <div class="relative mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3">${[["25+", "mẫu thiết kế"], ["34", "tỉnh thành giao"], ["2 giờ", "in & giao nội thành"], ["1.200+", "khách hàng"]].map(([s, t]) => `<div class="p-4 rounded-2xl kinh-dac"><p class="text-2xl lg:text-3xl font-semibold text-primary">${s}</p><p class="text-sm text-muted">${t}</p></div>`).join("")}</div>
+    </div></section>`;
+}
+
+function daiToi() {
   return `<section class="container mt-16 lg:mt-28">
     <div class="relative overflow-hidden rounded-[36px] p-7 sm:p-10 lg:p-16 text-white">
       <div class="absolute inset-0 bg-gradient-to-br from-[#083B3D] via-[#0E6F73] to-[#1FA79D]"></div>
