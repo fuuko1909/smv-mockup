@@ -1,12 +1,28 @@
 // Cau hinh Tailwind CDN + header/footer dung chung cho cac trang mockup
+
+// Bo mau chon qua ?mau=<ma>. Moi primary deu dat tuong phan >= 4.5:1 voi chu trang (WCAG AA)
+const BO_MAU = {
+  do:      { ten: "Đỏ SMV (chỉnh đạt AA)",          p: "#D32F2F", dark: "#B71C1C", soft: "#FDECEC", wash: "#F7F7F8" },
+  teal:    { ten: "Transformative Teal (WGSN 2026)", p: "#0E6F73", dark: "#0A5558", soft: "#E2F1F0", wash: "#F3F7F6" },
+  cloud:   { ten: "Cloud Dancer (Pantone 2026)",     p: "#1F2230", dark: "#000000", soft: "#E9E6DF", wash: "#F0EEE9" },
+  fuchsia: { ten: "Electric Fuchsia / Magenta in",   p: "#C2185B", dark: "#9C1248", soft: "#FCE7F0", wash: "#FAF6F8" },
+  blue:    { ten: "Blue Aura — xanh tin cậy",        p: "#2F56D9", dark: "#2343B0", soft: "#E8EEFD", wash: "#F5F7FC" },
+  dat:     { ten: "Đất nung (Mocha / Amber Haze)",   p: "#A44A2A", dark: "#85391F", soft: "#F7EAE3", wash: "#FAF6F2" },
+};
+const MA_MAU = new URLSearchParams(location.search).get("mau") in BO_MAU ? new URLSearchParams(location.search).get("mau") : "do";
+{
+  const m = BO_MAU[MA_MAU], r = document.documentElement.style;
+  r.setProperty("--p", m.p); r.setProperty("--p-dark", m.dark); r.setProperty("--p-soft", m.soft); r.setProperty("--wash", m.wash);
+}
+
 tailwind.config = {
   theme: {
     container: { center: true, padding: { DEFAULT: "1rem", lg: "2rem" }, screens: { "2xl": "1320px" } },
     extend: {
       fontFamily: { sans: ['"Be Vietnam Pro"', "system-ui", "sans-serif"] },
       colors: {
-        primary: { DEFAULT: "#E53935", soft: "#FDECEC", dark: "#C62828" },
-        ink: "#1F2230", muted: "#5F6475", line: "#E6E7EB", wash: "#F7F7F8",
+        primary: { DEFAULT: "var(--p)", soft: "var(--p-soft)", dark: "var(--p-dark)" },
+        ink: "#1F2230", muted: "#5F6475", line: "#E6E7EB", wash: "var(--wash)",
       },
       fontSize: {
         caption: ["12px", { lineHeight: "16px", fontWeight: "500" }],
@@ -115,4 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const h = document.getElementById("header"), f = document.getElementById("footer");
   if (h) h.outerHTML = veHeader();
   if (f) f.outerHTML = veFooter();
+  // Giu bo mau khi bam qua lai giua cac trang mockup
+  if (location.search) document.querySelectorAll('a[href$=".html"]').forEach((a) => (a.href += location.search));
 });
